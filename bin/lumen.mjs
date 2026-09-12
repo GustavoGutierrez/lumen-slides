@@ -10,7 +10,8 @@ import { researchPlan } from '../src/research.mjs';
 import { promptFor, runHarness, acceptStage, parseArtifact } from '../src/harness.mjs';
 import { exportPDF, verifyDeck, packDeck } from '../src/export.mjs';
 
-const help=`Lumen Slides 0.1.0 · Node.js 22+
+const version=(await json(path.join(ROOT,'package.json'))).version;
+const help=`Lumen Slides ${version} · Node.js 22+
 
 node bin/lumen.mjs new <name> [--title "Tema"] [--theme ink]
 node bin/lumen.mjs research <deck-dir>

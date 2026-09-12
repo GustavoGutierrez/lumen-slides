@@ -117,6 +117,6 @@ export async function buildDeck(dir, out = path.join(dir, 'output')) {
   const files = {};
   for (const f of ['index.html','deck.json','sources.json','LEEME.txt','THIRD-PARTY-LICENSES.txt']) files[f] = hash(await fs.readFile(path.join(out,f)));
   const lockHash = hash(await fs.readFile(path.join(ROOT,'package-lock.json')));
-  await writeJSON(path.join(out,'manifest.json'), { format:'lumen-portable-v1', version:'0.1.0', slides:deck.slides.length, features, lockHash, files });
+  await writeJSON(path.join(out,'manifest.json'), { format:'lumen-portable-v1', version:(await json(path.join(ROOT,'package.json'))).version, slides:deck.slides.length, features, lockHash, files });
   return { out, slides:deck.slides.length, features, sha256:files['index.html'], bytes:Buffer.byteLength(html) };
 }
