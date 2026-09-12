@@ -51,8 +51,13 @@ test('imageOnLight holds the same asset guarantees as image', async t => {
   const dir = await fixture(t, { image:'resources/meridian-logo.svg', imageOnLight:'resources/missing-logo.svg' });
   await assert.rejects(validateDeck(dir), /ENOENT|missing-logo/);
   const deck = await json(path.join(dir, 'deck.json'));
-  // A real file that exists outside the deck: the guard has to be containment, not a missing path.
-  deck.slides[0].imageOnLight = path.relative(dir, path.join(ROOT, 'assets/brand/favicon.png'));
+  // A real file outside the deck, on the same volume: the guard has to be containment, not a missing
+  // path. Pointing at the repo breaks on Windows, where the temp deck and the checkout can sit on
+  // different drives and path.relative then yields an absolute path, tripping a different guard.
+  const outside = path.join(dir, '..', `outside-${path.basename(dir)}.svg`);
+  await fs.writeFile(outside, MARK);
+  t.after(() => fs.rm(outside, { force:true }));
+  deck.slides[0].imageOnLight = path.relative(dir, outside);
   await writeJSON(path.join(dir, 'deck.json'), deck);
   await assert.rejects(validateDeck(dir), /outside allowed directory/);
   deck.slides[0] = { ...deck.slides[0], layout:'statement', body:'Sin imagen', image:undefined, alt:undefined, imageOnLight:'resources/meridian-logo-black.svg' };
