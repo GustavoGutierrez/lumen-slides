@@ -1,0 +1,18 @@
+{
+  "id": "prisma-claro",
+  "name": "Prisma claro / espectro sobre blanco",
+  "colors": {
+    "background": "#ffffff",
+    "foreground": "#000002",
+    "muted": "#55598c",
+    "accent": "#00798e",
+    "secondary": "#6176e3",
+    "surface": "#e6f6fa"
+  },
+  "chart": [
+    "#00798e",
+    "#da38cd",
+    "#6176e3",
+    "#ec5512"
+  ]
+}

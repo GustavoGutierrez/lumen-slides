@@ -24,12 +24,18 @@
     "pdf": "node bin/lumen.mjs pdf decks/demo",
     "setup:browsers": "playwright install chromium firefox webkit",
     "verify": "node bin/lumen.mjs verify decks/demo",
+    "wcag": "node scripts/wcag.mjs",
     "agent:sync": "node scripts/sync-agents.mjs",
     "package": "node scripts/package-project.mjs"
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "5.3.0",
     "@fontsource/inter": "5.3.0",
+    "@fontsource/montserrat": "5.3.0",
+    "@fontsource/open-sans": "5.3.0",
+    "@fontsource/poppins": "5.3.0",
+    "@fontsource/raleway": "5.3.0",
+    "@tabler/icons": "3.46.0",
     "ajv": "8.17.1",
     "ajv-formats": "3.0.1",
     "cross-spawn": "7.0.6",
@@ -42,6 +48,7 @@
     "pdf-lib": "1.17.1",
     "playwright": "1.63.0",
     "reveal.js": "5.2.1",
+    "simple-icons": "16.30.0",
     "three": "0.180.0"
   }
 }

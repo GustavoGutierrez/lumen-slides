@@ -1,0 +1,37 @@
+/* The field travels with the template: re-declaring the roles on the section itself also reaches the
+   footer, the brand and the citations, which live outside .slide-content. Works under every theme. */
+.reveal .slides>section.layout-cover-cyan{--background:#6bd9ec;--foreground:#000002;--muted:#00434f;--accent:#00434f;--secondary:#00849b;--surface:#6bd9ec;color:var(--foreground)}
+/* #00849b reaches only 2.67:1 on the cyan field, so it draws the decorative rule and never any text. */
+.layout-cover-cyan .cover-rule{border-top-color:var(--secondary);width:150px}
+.cover-cyan-content .eyebrow{font-weight:700}
+
+/* Reveal deja un margen alrededor de la diapositiva pintado por el body con el color del tema.
+   Sin esto, el campo invertido queda como un recuadro flotando sobre el fondo anterior. */
+body:has(.slides>section.present.layout-cover-cyan){background:#6bd9ec;transition:background var(--transition-crossfade,320ms) ease}
+
+/* Titulo en blanco por decision del autor. Medido: 1.65:1 sobre el campo cyan,
+   por debajo del minimo WCAG incluso para texto grande. El resto de la portada
+   mantiene tinta oscura para que la informacion siga siendo legible. */
+.cover-cyan-content h1{color:#ffffff}
+
+/* Reparto de color pedido por el autor para esta portada. Medido sobre el campo cyan #6bd9ec:
+   #00849b da 2.67:1 y el blanco 1.65:1, ambos por debajo del minimo WCAG; es una decision de autoria,
+   no un descuido. En el mismo tono, #00596b alcanzaria 4.83:1 si alguna vez se quiere revertir.
+   Se pintan los elementos uno a uno en lugar de mover --muted o --accent: esos roles tambien visten
+   el pie, las citas y el numero de pagina, que deben conservar su tinta oscura legible.
+   El .byline lleva !important porque src/style.css ya lo declara asi. */
+.cover-cyan-content .lead{color:#00849b}
+.layout-cover-cyan .cover-rule{border-top-color:#00849b}
+.reveal .cover-cyan-content p.eyebrow{color:#ffffff}
+.cover-cyan-content .byline{color:#ffffff!important}
+
+/* Los dos campos invertidos son claros bajo cualquier tema, asi que fuerzan la marca de tinta oscura. */
+.reveal .slides>section.layout-cover-cyan .brand-logo{display:none}
+.reveal .slides>section.layout-cover-cyan .brand-logo-on-light{display:inline}
+
+/* Los controles y la barra de progreso de Reveal viven fuera de la seccion, asi que no heredan los
+   roles redeclarados arriba: siguen usando el --accent del tema y bajo prisma ese accent es el mismo
+   cyan del campo, de modo que las flechas desaparecen. Se repintan con la tinta oscura del campo y
+   llevan una sombra clara para que tampoco se pierdan si el campo cambia de tono. */
+body:has(.slides>section.present.layout-cover-cyan) .reveal .controls{color:#00434f;filter:drop-shadow(0 1px 2px rgba(255,255,255,.65))}
+body:has(.slides>section.present.layout-cover-cyan) .reveal .progress{color:#00434f}

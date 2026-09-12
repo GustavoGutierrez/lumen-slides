@@ -29,6 +29,16 @@
     "brand": {
       "type": "string"
     },
+    "transition": {
+      "enum": [
+        "fade",
+        "crossfade",
+        "slide",
+        "morph",
+        "fade-dark",
+        "none"
+      ]
+    },
     "sources": {
       "type": "array",
       "items": {
@@ -123,6 +133,10 @@
               "type": "object",
               "additionalProperties": false,
               "properties": {
+                "icon": {
+                  "type": "string",
+                  "pattern": "^(tabler|tabler-filled|brand):[a-z0-9][a-z0-9-]*$"
+                },
                 "title": {
                   "type": "string"
                 },
@@ -138,7 +152,14 @@
             "minItems": 1,
             "maxItems": 6
           },
+          "icon": {
+            "type": "string",
+            "pattern": "^(tabler|tabler-filled|brand):[a-z0-9][a-z0-9-]*$"
+          },
           "image": {
+            "type": "string"
+          },
+          "imageOnLight": {
             "type": "string"
           },
           "alt": {
@@ -254,16 +275,67 @@
               "kind": {
                 "enum": [
                   "network",
-                  "robot"
+                  "robot",
+                  "pipeline"
                 ]
               },
               "caption": {
                 "type": "string"
+              },
+              "loop": {
+                "type": "boolean"
+              },
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 30
+                    },
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "detail"
+                  ]
+                },
+                "minItems": 2,
+                "maxItems": 8
               }
             },
             "required": [
               "kind",
               "caption"
+            ],
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "pipeline"
+                    }
+                  },
+                  "required": [
+                    "kind"
+                  ]
+                },
+                "then": {
+                  "properties": {
+                    "steps": {
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "steps"
+                  ]
+                }
+              }
             ]
           },
           "math": {
@@ -290,6 +362,16 @@
           "brand": {
             "type": "string",
             "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "transition": {
+            "enum": [
+              "fade",
+              "crossfade",
+              "slide",
+              "morph",
+              "fade-dark",
+              "none"
+            ]
           }
         },
         "required": [

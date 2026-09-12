@@ -2,10 +2,12 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { ROOT } from '../src/core.mjs';
 
-const source=path.join(ROOT,'.agents/skills/lumen-decks/SKILL.md');
-for(const folder of ['.claude/skills','.opencode/skills','.pi/skills']){
-  const target=path.join(ROOT,folder,'lumen-decks');await fs.mkdir(target,{recursive:true});
-  await fs.copyFile(source,path.join(target,'SKILL.md'));
+// Every directory under .agents/skills is a skill, copied whole so a skill's references/ and assets/ travel with it.
+const skills=path.join(ROOT,'.agents/skills');
+for(const entry of await fs.readdir(skills,{withFileTypes:true})){
+  if(!entry.isDirectory())continue;
+  for(const folder of ['.claude/skills','.opencode/skills','.pi/skills'])
+    await fs.cp(path.join(skills,entry.name),path.join(ROOT,folder,entry.name),{recursive:true});
 }
 for(const name of ['research','storyboard','compose','review']){
   const body=await fs.readFile(path.join(ROOT,'agents',`${name}.md`),'utf8');

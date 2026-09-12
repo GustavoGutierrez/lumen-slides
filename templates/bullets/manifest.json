@@ -1,0 +1,7 @@
+{
+  "id": "bullets",
+  "name": "Bullets",
+  "required": [
+    "items"
+  ]
+}

@@ -23,3 +23,5 @@ dist/
 !.env.example
 *.log
 .atl/
+.qa
+$SC

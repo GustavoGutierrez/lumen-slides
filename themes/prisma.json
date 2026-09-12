@@ -1,0 +1,18 @@
+{
+  "id": "prisma",
+  "name": "Prisma / espectro",
+  "colors": {
+    "background": "#22243a",
+    "foreground": "#ffffff",
+    "muted": "#c5c9e8",
+    "accent": "#6bd9ec",
+    "secondary": "#6176e3",
+    "surface": "#40436e"
+  },
+  "chart": [
+    "#6bd9ec",
+    "#da38cd",
+    "#6176e3",
+    "#ec5512"
+  ]
+}

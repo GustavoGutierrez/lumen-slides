@@ -1,0 +1,28 @@
+/* Same scoping as section-orange: the roles are re-declared on the section itself, so the footer, the
+   brand and the citations invert with the field. `color` is restated because src/style.css declares it
+   on .reveal, outside the section, and the headings would otherwise keep the theme ink. */
+.reveal .slides>section.layout-section-blue{--background:#1034a6;--foreground:#ffffff;--muted:#9fb4e6;--accent:#9fb4e6;--secondary:#9fb4e6;--surface:#1034a6;color:var(--foreground)}
+/* The widest field of the set at 10.18:1, so the tinted supporting ink can go a long way down and still hold 4.92:1. */
+.section-blue-content h2{max-width:1040px}
+/* The eyebrow is the display ink turned into a field carrying the field colour back as text: the same
+   measured pair inverted, 10.18:1 here, so the accent never depends on a third colour the field
+   could swallow. section-orange needed a borrowed hue for this; a free palette does not.
+   The selector carries .reveal and p because src/style.css already declares .reveal p.eyebrow{color:var(--accent)},
+   which outranks a plain two-class rule and would paint the chip text in the chip's own ink. */
+.reveal .section-blue-content p.eyebrow{display:inline-block;background:var(--foreground);color:var(--background);padding:7px 15px;margin-bottom:30px}
+
+/* Reveal paints the margin around the slide from the body. Without this the field reads as a rectangle
+   floating on the previous theme colour. */
+body:has(.slides>section.present.layout-section-blue){background:#1034a6;transition:background var(--transition-crossfade,320ms) ease}
+
+/* The field is dark under any theme, so the ordinary mark is the right one. It still has to be forced:
+   under a light theme themeCSS() swaps in the dark-ink twin by page-background luminance, and that twin
+   is picked for the theme's light page, not for this field, where it would lose its glyphs. */
+.reveal .slides>section.layout-section-blue .brand-logo{display:inline}
+.reveal .slides>section.layout-section-blue .brand-logo-on-light{display:none}
+
+/* The controls and the progress bar live outside the section, so they keep the theme --accent and can
+   land on the same hue as the field, where the arrows disappear. Repainted with the field ink and given
+   a shadow in the opposite ink so they survive whatever sits behind them. */
+body:has(.slides>section.present.layout-section-blue) .reveal .controls{color:#ffffff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.55))}
+body:has(.slides>section.present.layout-section-blue) .reveal .progress{color:#ffffff}

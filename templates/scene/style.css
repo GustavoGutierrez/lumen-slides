@@ -1,0 +1,16 @@
+.scene .scene-fallback-steps{font-size:15px!important;line-height:1.4!important;padding:20px 24px!important;color:var(--muted)!important;height:100%;overflow:hidden;box-sizing:border-box}
+.scene-steps{margin:14px 0 0!important;padding-left:26px!important;display:grid;gap:9px;counter-reset:none}
+.scene-steps li{font-size:15px;line-height:1.35}
+.scene-steps strong{color:var(--foreground);font-weight:600}
+.scene-detail{border-left:2px solid var(--accent);padding-left:27px}
+.scene-detail .lead{font-size:21px!important;line-height:1.4;color:var(--muted)}
+.scene-detail-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:20px}
+.scene-detail .step-count{font-size:16px;color:var(--accent);margin:0}
+.scene-detail .step-controls{margin:0}
+.scene-detail .step-controls button{font-size:19px;width:40px}
+.scene-detail h3{margin-top:14px;font-size:26px}
+.scene-detail .step-description{font-size:19px;line-height:1.45;color:var(--muted);margin-top:10px!important;min-height:82px}
+.scene-detail .caption{font-size:14px;margin-top:10px}
+.scene-detail .interaction-hint{font-size:14px!important;margin-top:10px!important}
+.scene-detail .scene-toggle{margin-top:10px}
+@media print{.scene-detail .step-controls,.scene-detail .interaction-hint{display:none!important}}

@@ -34,5 +34,77 @@
         "weight": 700
       }
     ]
+  },
+  "poppins": {
+    "name": "Poppins",
+    "family": "Poppins",
+    "files": [
+      {
+        "path": "node_modules/@fontsource/poppins/files/poppins-latin-400-normal.woff2",
+        "weight": 400
+      },
+      {
+        "path": "node_modules/@fontsource/poppins/files/poppins-latin-600-normal.woff2",
+        "weight": 600
+      },
+      {
+        "path": "node_modules/@fontsource/poppins/files/poppins-latin-700-normal.woff2",
+        "weight": 700
+      }
+    ]
+  },
+  "montserrat": {
+    "name": "Montserrat",
+    "family": "Montserrat",
+    "files": [
+      {
+        "path": "node_modules/@fontsource/montserrat/files/montserrat-latin-400-normal.woff2",
+        "weight": 400
+      },
+      {
+        "path": "node_modules/@fontsource/montserrat/files/montserrat-latin-600-normal.woff2",
+        "weight": 600
+      },
+      {
+        "path": "node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff2",
+        "weight": 700
+      }
+    ]
+  },
+  "open-sans": {
+    "name": "Open Sans",
+    "family": "Open Sans",
+    "files": [
+      {
+        "path": "node_modules/@fontsource/open-sans/files/open-sans-latin-400-normal.woff2",
+        "weight": 400
+      },
+      {
+        "path": "node_modules/@fontsource/open-sans/files/open-sans-latin-600-normal.woff2",
+        "weight": 600
+      },
+      {
+        "path": "node_modules/@fontsource/open-sans/files/open-sans-latin-700-normal.woff2",
+        "weight": 700
+      }
+    ]
+  },
+  "raleway": {
+    "name": "Raleway",
+    "family": "Raleway",
+    "files": [
+      {
+        "path": "node_modules/@fontsource/raleway/files/raleway-latin-400-normal.woff2",
+        "weight": 400
+      },
+      {
+        "path": "node_modules/@fontsource/raleway/files/raleway-latin-600-normal.woff2",
+        "weight": 600
+      },
+      {
+        "path": "node_modules/@fontsource/raleway/files/raleway-latin-700-normal.woff2",
+        "weight": 700
+      }
+    ]
   }
 }

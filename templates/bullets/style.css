@@ -1,0 +1,15 @@
+.bullets-content{padding-top:32px}
+.bullets-content h2{font-size:52px;max-width:1060px}
+.bullet-list{list-style:none;margin:32px 0 0!important;padding:0!important;display:grid;gap:16px;max-width:1070px}
+.bullet-list li{position:relative;padding-left:32px;font-size:23px;line-height:1.45;color:var(--muted)}
+.bullet-list li::before{content:"";position:absolute;left:0;top:12px;width:17px;height:2px;background:var(--accent)}
+.bullet-list strong{color:var(--foreground);font-weight:600}
+.bullets-content .secondary-copy{margin-top:28px}
+/* Denser slides trade type size for room; five and six items still have to fit the 604px content box. */
+.bullet-list:has(li:nth-child(5)){gap:13px}
+.bullet-list:has(li:nth-child(5)) li{font-size:21px;line-height:1.4}
+.bullet-list:has(li:nth-child(6)){gap:11px;margin-top:26px!important}
+.bullet-list:has(li:nth-child(6)) li{font-size:20px;line-height:1.38}
+/* An item icon replaces the dash marker and follows the text size and the theme accent. */
+.bullet-list li>svg.icon{position:absolute;left:0;top:.2em;width:1em;height:1em;color:var(--accent)}
+.bullet-list li:has(>svg.icon)::before{display:none}

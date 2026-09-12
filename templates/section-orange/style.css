@@ -1,0 +1,25 @@
+/* Same scoping as cover-cyan: the roles are re-declared on the section so the footer inverts too. */
+.reveal .slides>section.layout-section-orange{--background:#ec5512;--foreground:#ffffff;--muted:#2b0f00;--accent:#2b0f00;--secondary:#6bd9ec;--surface:#ec5512;color:var(--foreground)}
+/* White clears only 3.57:1 on orange, which is AA for the display type but not for the 14px brand. */
+.layout-section-orange .brand{color:var(--muted)}
+.section-orange-content .secondary-copy{color:var(--foreground)}
+/* Cyan text on orange is 2.17:1, so the author's cyan becomes the field behind the eyebrow instead. */
+.reveal .section-orange-content p.eyebrow{display:inline-block;background:var(--secondary);color:#000002;padding:7px 15px;margin-bottom:30px}
+.section-orange-content h2{max-width:1040px}
+
+/* Igual que en cover-cyan: el margen exterior de Reveal lo pinta el body. */
+body:has(.slides>section.present.layout-section-orange){background:#ec5512;transition:background var(--transition-crossfade,320ms) ease}
+
+/* El campo naranja es claro bajo cualquier tema, asi que fuerza la marca de tinta oscura. */
+.reveal .slides>section.layout-section-orange .brand-logo{display:none}
+.reveal .slides>section.layout-section-orange .brand-logo-on-light{display:inline}
+
+/* Mismo motivo que en cover-cyan: los controles quedan fuera de la seccion y conservan el --accent
+   del tema, que sobre el naranja apenas se distingue. Tinta oscura mas sombra clara. */
+body:has(.slides>section.present.layout-section-orange) .reveal .controls{color:#2b0f00;filter:drop-shadow(0 1px 2px rgba(255,255,255,.5))}
+body:has(.slides>section.present.layout-section-orange) .reveal .progress{color:#2b0f00}
+
+/* La marca lleva acentos en #ec5512, el mismo naranja del campo: sobre el, el punto de la "i", el
+   isotipo y el subtexto caen a 1:1 y el pie se lee "MER DIAN". Reproduccion a una tinta, sin chip ni
+   recuadro: brightness(0) lleva toda la marca a negro, que sobre el naranja mide 5.87:1. */
+.reveal .slides>section.layout-section-orange .brand-logo-on-light{filter:brightness(0)}

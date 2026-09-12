@@ -1,0 +1,4 @@
+/* The hero icon is decorative; it borrows the vertical room from the block padding to protect the 604px content box. */
+.statement-content:has(.hero-icon){padding-top:12px}
+.hero-icon{margin-bottom:14px!important;line-height:0}
+.hero-icon svg.icon{width:64px;height:64px;color:var(--accent)}

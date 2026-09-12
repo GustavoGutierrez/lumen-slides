@@ -1,0 +1,28 @@
+/* Same scoping as section-orange: the roles are re-declared on the section itself, so the footer, the
+   brand and the citations invert with the field. `color` is restated because src/style.css declares it
+   on .reveal, outside the section, and the headings would otherwise keep the theme ink. */
+.reveal .slides>section.layout-section-olive{--background:#808000;--foreground:#000002;--muted:#0d0b00;--accent:#0d0b00;--secondary:#0d0b00;--surface:#808000;color:var(--foreground)}
+/* Olive leaves almost no room above black: #1a1700 already falls to 4.29:1, so the supporting ink stays near-black and the hierarchy comes from size and weight. */
+.section-olive-content h2{max-width:1040px}
+/* The eyebrow is the display ink turned into a field carrying the field colour back as text: the same
+   measured pair inverted, 5.00:1 here, so the accent never depends on a third colour the field
+   could swallow. section-orange needed a borrowed hue for this; a free palette does not.
+   The selector carries .reveal and p because src/style.css already declares .reveal p.eyebrow{color:var(--accent)},
+   which outranks a plain two-class rule and would paint the chip text in the chip's own ink. */
+.reveal .section-olive-content p.eyebrow{display:inline-block;background:var(--foreground);color:var(--background);padding:7px 15px;margin-bottom:30px}
+
+/* Reveal paints the margin around the slide from the body. Without this the field reads as a rectangle
+   floating on the previous theme colour. */
+body:has(.slides>section.present.layout-section-olive){background:#808000;transition:background var(--transition-crossfade,320ms) ease}
+
+/* The field is light under any theme, so it forces the dark-ink mark exactly as section-orange does.
+   No brightness(0) here: that override exists only because the mark carries #ec5512 accents that vanish
+   on the orange field, and #808000 does not collide with them. */
+.reveal .slides>section.layout-section-olive .brand-logo{display:none}
+.reveal .slides>section.layout-section-olive .brand-logo-on-light{display:inline}
+
+/* The controls and the progress bar live outside the section, so they keep the theme --accent and can
+   land on the same hue as the field, where the arrows disappear. Repainted with the field ink and given
+   a shadow in the opposite ink so they survive whatever sits behind them. */
+body:has(.slides>section.present.layout-section-olive) .reveal .controls{color:#0d0b00;filter:drop-shadow(0 1px 2px rgba(255,255,255,.55))}
+body:has(.slides>section.present.layout-section-olive) .reveal .progress{color:#0d0b00}
