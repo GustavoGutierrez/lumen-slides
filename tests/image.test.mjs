@@ -8,7 +8,10 @@ import { buildDeck } from '../src/build.mjs';
 
 const LIGHT = ['paper', 'prisma-claro', 'ocean'];
 const DARK = ['ink', 'prisma'];
-const RESOURCES = path.join(ROOT, 'decks/mas-alla-del-codigo/resources');
+// The suite writes its own marks: only decks/demo is tracked, so copying from any other deck
+// passes locally and fails wherever that deck does not exist, such as CI.
+const MARK = '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="20" viewBox="0 0 60 20"><rect width="60" height="20" fill="#fff"/></svg>';
+const MARK_ON_LIGHT = MARK.replace('#fff', '#000');
 
 // The demo deck carries no image slide, so the fixture replaces its slides with the two cases under test:
 // a wordmark that needs a light twin, and a mark that has none.
@@ -16,7 +19,9 @@ async function fixture(t, slide) {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'lumen-image-'));
   await fs.cp(path.join(ROOT, 'decks/demo'), dir, { recursive:true, filter:s => !s.includes(`${path.sep}output`) && !s.includes(`${path.sep}runs`) });
   t.after(() => fs.rm(dir, { recursive:true, force:true }));
-  for (const f of ['meridian-logo.svg', 'meridian-logo-black.svg']) await fs.copyFile(path.join(RESOURCES, f), path.join(dir, 'resources', f));
+  await fs.mkdir(path.join(dir, 'resources'), { recursive:true });
+  await fs.writeFile(path.join(dir, 'resources/meridian-logo.svg'), MARK);
+  await fs.writeFile(path.join(dir, 'resources/meridian-logo-black.svg'), MARK_ON_LIGHT);
   const deck = await json(path.join(dir, 'deck.json'));
   deck.slides = [{ id:'contexto', layout:'image', title:'Contexto', alt:'Meridian', basis:'demo', sourceIds:[], ...slide }];
   await writeJSON(path.join(dir, 'deck.json'), deck);
