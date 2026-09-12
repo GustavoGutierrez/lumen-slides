@@ -1,0 +1,7 @@
+{
+  "id": "columns",
+  "name": "Columns",
+  "required": [
+    "items"
+  ]
+}

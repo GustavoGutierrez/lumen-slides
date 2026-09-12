@@ -1,0 +1,8 @@
+{
+  "id": "image",
+  "name": "Image",
+  "required": [
+    "image",
+    "alt"
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "official",
+              "statistics",
+              "paper",
+              "preprint",
+              "news",
+              "secondary",
+              "local"
+            ]
+          },
+          "accessed": {
+            "type": "string",
+            "format": "date"
+          },
+          "published": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "locator": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "url",
+          "publisher",
+          "kind",
+          "accessed"
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 100
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "sourceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "maxItems": 8
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "limitations": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "sourceIds",
+          "confidence",
+          "limitations"
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 150
+    },
+    "openQuestions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 0,
+      "maxItems": 30
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "sources",
+    "claims",
+    "openQuestions",
+    "summary"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "lumen-slides",
+  "version": "0.1.0",
+  "description": "Portable, evidence-led presentations with a deterministic agent harness",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Gustavo Gutérrez",
+    "url": "https://github.com/GustavoGutierrez"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "lumen": "bin/lumen.mjs"
+  },
+  "scripts": {
+    "demo": "node bin/lumen.mjs build decks/demo",
+    "check": "node scripts/check-deps.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node scripts/browser-test.mjs",
+    "test:harness": "node scripts/harness-smoke.mjs",
+    "pdf": "node bin/lumen.mjs pdf decks/demo",
+    "setup:browsers": "playwright install chromium firefox webkit",
+    "verify": "node bin/lumen.mjs verify decks/demo",
+    "agent:sync": "node scripts/sync-agents.mjs",
+    "package": "node scripts/package-project.mjs"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans": "5.3.0",
+    "@fontsource/inter": "5.3.0",
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
+    "cross-spawn": "7.0.6",
+    "echarts": "6.0.0",
+    "esbuild": "0.25.10",
+    "fflate": "0.8.3",
+    "handlebars": "4.7.8",
+    "katex": "0.16.22",
+    "mermaid": "11.12.0",
+    "pdf-lib": "1.17.1",
+    "playwright": "1.63.0",
+    "reveal.js": "5.2.1",
+    "three": "0.180.0"
+  }
+}

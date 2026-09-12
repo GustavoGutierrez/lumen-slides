@@ -1,0 +1,17 @@
+{
+  "topic": "Presentaciones profesionales portables con agentes",
+  "audience": "Desarrolladores y líderes técnicos",
+  "topics": [
+    "software",
+    "ai",
+    "llm"
+  ],
+  "objective": "Demostrar el flujo y los formatos de Lumen Slides",
+  "slideCount": 10,
+  "language": "es",
+  "theme": "ink",
+  "font": "inter",
+  "brand": "lumen",
+  "dateCutoff": "2026-09-12",
+  "researchMode": "web-and-local"
+}

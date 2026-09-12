@@ -1,0 +1,272 @@
+{
+  "schemaVersion": "1.0",
+  "id": "lumen-demo",
+  "title": "Presentaciones con evidencia",
+  "lang": "es",
+  "author": "Gustavo Gutiérrez",
+  "theme": "ink",
+  "font": "inter",
+  "brand": "lumen",
+  "sources": [
+    {
+      "id": "reveal",
+      "title": "PDF Export · Reveal.js",
+      "url": "https://revealjs.com/pdf-export/",
+      "publisher": "Reveal.js",
+      "kind": "official",
+      "accessed": "2026-09-12",
+      "published": null
+    },
+    {
+      "id": "echarts",
+      "title": "Canvas vs. SVG · Apache ECharts",
+      "url": "https://echarts.apache.org/handbook/en/best-practices/canvas-vs-svg/",
+      "publisher": "Apache ECharts",
+      "kind": "official",
+      "accessed": "2026-09-12",
+      "published": null
+    },
+    {
+      "id": "mermaid",
+      "title": "Usage · Mermaid",
+      "url": "https://mermaid.js.org/config/usage.html",
+      "publisher": "Mermaid",
+      "kind": "official",
+      "accessed": "2026-09-12",
+      "published": null
+    },
+    {
+      "id": "three",
+      "title": "WebGLRenderer · Three.js",
+      "url": "https://threejs.org/docs/pages/WebGLRenderer.html",
+      "publisher": "Three.js",
+      "kind": "official",
+      "accessed": "2026-09-12",
+      "published": null
+    },
+    {
+      "id": "slidev",
+      "title": "Exporting · Slidev",
+      "url": "https://sli.dev/guide/exporting.html",
+      "publisher": "Slidev",
+      "kind": "official",
+      "accessed": "2026-09-12",
+      "published": null
+    },
+    {
+      "id": "playwright",
+      "title": "Browsers · Playwright",
+      "url": "https://playwright.dev/docs/browsers",
+      "publisher": "Playwright",
+      "kind": "official",
+      "accessed": "2026-09-12",
+      "published": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "cover",
+      "layout": "cover",
+      "eyebrow": "Lumen Slides / demo",
+      "title": "Presentaciones\ncon evidencia",
+      "subtitle": "Un flujo abierto para investigar, explicar y compartir conocimiento.",
+      "basis": "analysis",
+      "sourceIds": [],
+      "notes": "Demo funcional de Lumen Slides. Usa las flechas o desliza para avanzar. Puedes cambiar el tema y la tipografía en la barra superior."
+    },
+    {
+      "id": "separation",
+      "layout": "columns",
+      "eyebrow": "Arquitectura",
+      "title": "Contenido e identidad visual independientes",
+      "subtitle": "El agente organiza las ideas. El cliente aplica un contrato común.",
+      "items": [
+        {
+          "title": "Evidencia",
+          "text": "Documentos, datos y fuentes con fecha de consulta. Cada afirmación conserva su referencia."
+        },
+        {
+          "title": "Contenido",
+          "text": "Un archivo JSON define el guion, los gráficos, las notas y el tipo de diapositiva."
+        },
+        {
+          "title": "Identidad",
+          "text": "Las plantillas controlan la composición. Los temas, las fuentes y las marcas se configuran aparte."
+        }
+      ],
+      "basis": "analysis",
+      "sourceIds": [],
+      "notes": "Esta es una decisión de arquitectura del proyecto. El JSON no contiene JavaScript ejecutable."
+    },
+    {
+      "id": "flow",
+      "layout": "diagram",
+      "eyebrow": "Investigación",
+      "title": "Un recorrido que permite volver a las fuentes",
+      "diagram": {
+        "code": "flowchart LR\n A[\"Recursos\"] --> C[\"Investigación\"]\n B[\"Fuentes web\"] --> C\n C --> D[\"Guion\"]\n D --> E{\"Evidencia\"}\n E -->|Suficiente| F[\"Slides\"]\n E -->|Revisar| C",
+        "steps": [
+          {
+            "node": "A",
+            "title": "Recursos propios",
+            "detail": "Notas, documentos, imágenes y datos permanecen junto al proyecto."
+          },
+          {
+            "node": "C",
+            "title": "Fuentes examinadas",
+            "detail": "El agente registra qué afirma la fuente y bajo qué condiciones."
+          },
+          {
+            "node": "D",
+            "title": "Guion con propósito",
+            "detail": "Cada diapositiva explica una idea para una audiencia concreta."
+          },
+          {
+            "node": "E",
+            "title": "Revisión de evidencia",
+            "detail": "Una afirmación sin soporte vuelve a investigación o se retira."
+          },
+          {
+            "node": "F",
+            "title": "Presentación portable",
+            "detail": "El cliente valida el contenido y genera un HTML autónomo."
+          }
+        ]
+      },
+      "basis": "analysis",
+      "sourceIds": [],
+      "notes": "Haz clic en un nodo o usa las flechas del panel. El bucle muestra la corrección de afirmaciones; no equivale a una prueba automática de veracidad."
+    },
+    {
+      "id": "chart",
+      "layout": "chart",
+      "eyebrow": "Datos explorables",
+      "title": "Una gráfica conserva los datos que la explican",
+      "chart": {
+        "kind": "bar",
+        "labels": [
+          "Investigación",
+          "Guion",
+          "Diseño",
+          "Revisión"
+        ],
+        "series": [
+          {
+            "name": "Escenario A",
+            "values": [
+              28,
+              18,
+              32,
+              22
+            ]
+          },
+          {
+            "name": "Escenario B",
+            "values": [
+              35,
+              22,
+              23,
+              20
+            ]
+          }
+        ],
+        "unit": "Minutos ilustrativos",
+        "xLabel": "Actividad",
+        "caption": "Datos inventados para demostrar la interacción. No miden productividad real ni permiten inferir ahorros."
+      },
+      "basis": "demo",
+      "sourceIds": [],
+      "notes": "Pasa el puntero por la gráfica, selecciona una serie en la leyenda o abre Ver datos. Las cantidades son únicamente una demostración."
+    },
+    {
+      "id": "render",
+      "layout": "statement",
+      "eyebrow": "Gráficas",
+      "title": "SVG para ampliar y exportar con nitidez",
+      "body": "ECharts permite elegir SVG o Canvas. Para gráficas habituales de una presentación, usamos SVG y conservamos una tabla con los valores.",
+      "subtitle": "Canvas sigue siendo una alternativa para grandes volúmenes o efectos específicos.",
+      "basis": "evidence",
+      "sourceIds": [
+        "echarts"
+      ],
+      "notes": "Apache ECharts describe las diferencias de uso y memoria entre Canvas y SVG. Esta selección es una decisión para este tipo de presentación, no una superioridad universal."
+    },
+    {
+      "id": "network",
+      "layout": "scene",
+      "eyebrow": "Exploración espacial",
+      "title": "3D cuando la forma ayuda a explicar",
+      "body": "Una red por capas se puede observar desde distintos ángulos. El movimiento se puede pausar durante la explicación.",
+      "scene": {
+        "kind": "network",
+        "caption": "Ilustración conceptual. No representa la arquitectura ni los parámetros de un LLM real."
+      },
+      "basis": "demo",
+      "sourceIds": [],
+      "brand": "research-lab",
+      "notes": "Arrastra la red para girarla. Three.js utiliza WebGL2. Si no está disponible, aparece una descripción. El PDF conserva una vista fija."
+    },
+    {
+      "id": "math",
+      "layout": "math",
+      "eyebrow": "Matemáticas",
+      "title": "La notación también forma parte del contenido",
+      "math": "\\bar{x} = \\frac{1}{n} \\sum_{i=1}^{n} x_i",
+      "body": "Ejemplo de composición de una fórmula. KaTeX conserva la expresión en el documento, con una representación semántica MathML.",
+      "basis": "demo",
+      "sourceIds": [],
+      "brand": "research-lab",
+      "notes": "Demostración de notación editable. No representa un hallazgo estadístico."
+    },
+    {
+      "id": "delivery",
+      "layout": "columns",
+      "eyebrow": "Distribución",
+      "title": "Dos formatos para distintos usos",
+      "subtitle": "La presentación interactiva y su copia estática comparten el mismo contenido.",
+      "items": [
+        {
+          "title": "HTML autónomo",
+          "text": "Navegación, gráficas, diagramas y fuentes locales. Se abre en un navegador moderno."
+        },
+        {
+          "title": "PDF estático",
+          "text": "Una página por diapositiva. Registra una vista fija para imprimir, enviar o archivar."
+        }
+      ],
+      "basis": "analysis",
+      "sourceIds": [
+        "reveal",
+        "slidev"
+      ],
+      "notes": "Las exportaciones estáticas no conservan interactividad. En un teléfono, algunos visores de archivos bloquean JavaScript: abre el HTML con un navegador o usa alojamiento estático."
+    },
+    {
+      "id": "use",
+      "layout": "statement",
+      "eyebrow": "Tu siguiente presentación",
+      "title": "Un proyecto por tema, una metodología común",
+      "body": "Añade tus recursos, define la audiencia y el objetivo, y usa tu agente habitual para investigar y componer. Lumen aplica las mismas reglas de construcción y exportación.",
+      "subtitle": "Codex · Claude Code · OpenCode · Pi",
+      "basis": "analysis",
+      "sourceIds": [],
+      "notes": "Los adaptadores requieren el CLI instalado, autenticado y con sus herramientas de investigación configuradas. El renderizador y la demo funcionan sin un modelo."
+    },
+    {
+      "id": "sources",
+      "layout": "references",
+      "eyebrow": "Documentación consultada",
+      "title": "Fuentes técnicas",
+      "basis": "evidence",
+      "sourceIds": [
+        "reveal",
+        "echarts",
+        "mermaid",
+        "three",
+        "slidev",
+        "playwright"
+      ],
+      "notes": "Fuentes primarias utilizadas para investigar el motor. Las cifras de la gráfica son ilustrativas y no provienen de estos documentos."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "sources": [
+    {
+      "id": "reveal",
+      "title": "PDF Export · Reveal.js",
+      "url": "https://revealjs.com/pdf-export/",
+      "publisher": "Reveal.js",
+      "kind": "official",
+      "accessed": "2026-09-12",
+      "published": null
+    },
+    {
+      "id": "echarts",
+      "title": "Canvas vs. SVG · Apache ECharts",
+      "url": "https://echarts.apache.org/handbook/en/best-practices/canvas-vs-svg/",
+      "publisher": "Apache ECharts",
+      "kind": "official",
+      "accessed": "2026-09-12",
+      "published": null
+    },
+    {
+      "id": "mermaid",
+      "title": "Usage · Mermaid",
+      "url": "https://mermaid.js.org/config/usage.html",
+      "publisher": "Mermaid",
+      "kind": "official",
+      "accessed": "2026-09-12",
+      "published": null
+    },
+    {
+      "id": "three",
+      "title": "WebGLRenderer · Three.js",
+      "url": "https://threejs.org/docs/pages/WebGLRenderer.html",
+      "publisher": "Three.js",
+      "kind": "official",
+      "accessed": "2026-09-12",
+      "published": null
+    },
+    {
+      "id": "slidev",
+      "title": "Exporting · Slidev",
+      "url": "https://sli.dev/guide/exporting.html",
+      "publisher": "Slidev",
+      "kind": "official",
+      "accessed": "2026-09-12",
+      "published": null
+    },
+    {
+      "id": "playwright",
+      "title": "Browsers · Playwright",
+      "url": "https://playwright.dev/docs/browsers",
+      "publisher": "Playwright",
+      "kind": "official",
+      "accessed": "2026-09-12",
+      "published": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "svg",
+      "text": "ECharts permite renderizar con Canvas o SVG.",
+      "sourceIds": [
+        "echarts"
+      ],
+      "confidence": "high",
+      "limitations": "La selección depende del volumen y del tipo de visualización."
+    },
+    {
+      "id": "pdf",
+      "text": "La exportación a PDF conserva una representación estática de los slides.",
+      "sourceIds": [
+        "reveal",
+        "slidev"
+      ],
+      "confidence": "high",
+      "limitations": "Los controles interactivos no se conservan."
+    }
+  ],
+  "openQuestions": [],
+  "summary": "Documentación primaria para elegir una arquitectura web portable y exportación estática."
+}

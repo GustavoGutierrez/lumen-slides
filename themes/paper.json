@@ -1,0 +1,18 @@
+{
+  "id": "paper",
+  "name": "Paper / editorial",
+  "colors": {
+    "background": "#f5f3ed",
+    "foreground": "#172621",
+    "muted": "#516159",
+    "accent": "#2e664b",
+    "secondary": "#2b6091",
+    "surface": "#e7e9e0"
+  },
+  "chart": [
+    "#2e664b",
+    "#2b6091",
+    "#96512f",
+    "#7b478c"
+  ]
+}

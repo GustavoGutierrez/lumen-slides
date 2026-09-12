@@ -1,0 +1,44 @@
+{
+  "codex": {
+    "command": "codex",
+    "args": [
+      "exec",
+      "--json",
+      "--output-last-message",
+      "{response}",
+      "-"
+    ],
+    "input": "stdin"
+  },
+  "claude": {
+    "command": "claude",
+    "args": [
+      "-p",
+      "--output-format",
+      "stream-json",
+      "--verbose"
+    ],
+    "input": "stdin"
+  },
+  "opencode": {
+    "command": "opencode",
+    "args": [
+      "run",
+      "--format",
+      "json",
+      "--file",
+      "{prompt}",
+      "Read the attached task and return only the requested JSON artifact."
+    ],
+    "input": "none"
+  },
+  "pi": {
+    "command": "pi",
+    "args": [
+      "--print",
+      "--mode",
+      "json"
+    ],
+    "input": "stdin"
+  }
+}

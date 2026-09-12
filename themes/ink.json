@@ -1,0 +1,18 @@
+{
+  "id": "ink",
+  "name": "Ink / azul noche",
+  "colors": {
+    "background": "#101923",
+    "foreground": "#edf1f4",
+    "muted": "#b3bfcc",
+    "accent": "#b8f273",
+    "secondary": "#8bc6ef",
+    "surface": "#1a2937"
+  },
+  "chart": [
+    "#b8f273",
+    "#8bc6ef",
+    "#e7b2ff",
+    "#ffbf87"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "inter": {
+    "name": "Inter",
+    "family": "Inter",
+    "files": [
+      {
+        "path": "node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2",
+        "weight": 400
+      },
+      {
+        "path": "node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2",
+        "weight": 600
+      },
+      {
+        "path": "node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2",
+        "weight": 700
+      }
+    ]
+  },
+  "plex": {
+    "name": "IBM Plex Sans",
+    "family": "IBM Plex Sans",
+    "files": [
+      {
+        "path": "node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2",
+        "weight": 400
+      },
+      {
+        "path": "node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-600-normal.woff2",
+        "weight": 600
+      },
+      {
+        "path": "node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-700-normal.woff2",
+        "weight": 700
+      }
+    ]
+  }
+}

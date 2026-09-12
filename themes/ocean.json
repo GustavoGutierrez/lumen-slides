@@ -1,0 +1,18 @@
+{
+  "id": "ocean",
+  "name": "Ocean / institucional",
+  "colors": {
+    "background": "#f2f7fc",
+    "foreground": "#102f50",
+    "muted": "#47617c",
+    "accent": "#006b7b",
+    "secondary": "#984700",
+    "surface": "#dfebf5"
+  },
+  "chart": [
+    "#006b7b",
+    "#984700",
+    "#7256aa",
+    "#2d6bb5"
+  ]
+}

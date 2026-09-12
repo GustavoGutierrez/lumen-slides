@@ -1,0 +1,359 @@
+{
+  "version": 1,
+  "policy": "El catálogo orienta búsquedas; pertenecer a él no verifica una afirmación. Añadir fuentes primarias relevantes aunque no estén listadas. Leer la página y su metodología antes de citar. No copiar contenido íntegro.",
+  "sources": [
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "domain": "developers.openai.com",
+      "url": "https://developers.openai.com/",
+      "topics": [
+        "ai",
+        "llm",
+        "software"
+      ],
+      "kind": "official",
+      "guidance": "APIs y documentación. Los anuncios comerciales no son evaluaciones independientes."
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "domain": "www.anthropic.com",
+      "url": "https://www.anthropic.com/",
+      "topics": [
+        "ai",
+        "llm"
+      ],
+      "kind": "official",
+      "guidance": "Investigación y publicaciones del fabricante. Contrastar afirmaciones comparativas."
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "domain": "deepmind.google",
+      "url": "https://deepmind.google/",
+      "topics": [
+        "ai",
+        "robotics"
+      ],
+      "kind": "official",
+      "guidance": "Resultados del laboratorio y enlaces a papers."
+    },
+    {
+      "id": "pmlr",
+      "name": "PMLR",
+      "domain": "proceedings.mlr.press",
+      "url": "https://proceedings.mlr.press/",
+      "topics": [
+        "ai",
+        "llm",
+        "math"
+      ],
+      "kind": "paper",
+      "guidance": "Actas de conferencias. Verificar versión y metodología."
+    },
+    {
+      "id": "neurips",
+      "name": "NeurIPS",
+      "domain": "proceedings.neurips.cc",
+      "url": "https://proceedings.neurips.cc/",
+      "topics": [
+        "ai",
+        "llm"
+      ],
+      "kind": "paper",
+      "guidance": "Actas de investigación. Leer evidencia y límites."
+    },
+    {
+      "id": "arxiv",
+      "name": "arXiv",
+      "domain": "arxiv.org",
+      "url": "https://arxiv.org/",
+      "topics": [
+        "ai",
+        "llm",
+        "robotics",
+        "science",
+        "math"
+      ],
+      "kind": "preprint",
+      "guidance": "Manuscritos que pueden no tener revisión por pares. Verificar versión y publicación posterior."
+    },
+    {
+      "id": "dane",
+      "name": "DANE",
+      "domain": "www.dane.gov.co",
+      "url": "https://www.dane.gov.co/",
+      "topics": [
+        "statistics"
+      ],
+      "kind": "statistics",
+      "guidance": "Estadística oficial colombiana. Revisar fecha de corte, unidad y metodología."
+    },
+    {
+      "id": "worldbank",
+      "name": "World Bank",
+      "domain": "data.worldbank.org",
+      "url": "https://data.worldbank.org/",
+      "topics": [
+        "statistics"
+      ],
+      "kind": "statistics",
+      "guidance": "Indicadores comparables. Revisar definición y revisiones."
+    },
+    {
+      "id": "oecd",
+      "name": "OECD",
+      "domain": "www.oecd.org",
+      "url": "https://www.oecd.org/",
+      "topics": [
+        "statistics"
+      ],
+      "kind": "statistics",
+      "guidance": "Datos y metodología de indicadores."
+    },
+    {
+      "id": "eurostat",
+      "name": "Eurostat",
+      "domain": "ec.europa.eu",
+      "url": "https://ec.europa.eu/",
+      "topics": [
+        "statistics"
+      ],
+      "kind": "statistics",
+      "guidance": "Estadística europea. Filtrar dominio por ruta eurostat."
+    },
+    {
+      "id": "owid",
+      "name": "Our World in Data",
+      "domain": "ourworldindata.org",
+      "url": "https://ourworldindata.org/",
+      "topics": [
+        "statistics",
+        "science"
+      ],
+      "kind": "secondary",
+      "guidance": "Síntesis y datasets. Seguir la fuente original y su licencia."
+    },
+    {
+      "id": "nasa",
+      "name": "NASA",
+      "domain": "www.nasa.gov",
+      "url": "https://www.nasa.gov/",
+      "topics": [
+        "science",
+        "robotics"
+      ],
+      "kind": "official",
+      "guidance": "Misiones, instrumentos y datos científicos."
+    },
+    {
+      "id": "esa",
+      "name": "ESA",
+      "domain": "www.esa.int",
+      "url": "https://www.esa.int/",
+      "topics": [
+        "science",
+        "robotics"
+      ],
+      "kind": "official",
+      "guidance": "Misiones y resultados europeos."
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "domain": "www.nature.com",
+      "url": "https://www.nature.com/",
+      "topics": [
+        "science",
+        "ai",
+        "robotics"
+      ],
+      "kind": "paper",
+      "guidance": "Distinguir artículos de investigación, noticias y opinión."
+    },
+    {
+      "id": "science",
+      "name": "Science / AAAS",
+      "domain": "www.science.org",
+      "url": "https://www.science.org/",
+      "topics": [
+        "science",
+        "robotics"
+      ],
+      "kind": "paper",
+      "guidance": "Verificar tipo de publicación, métodos y correcciones."
+    },
+    {
+      "id": "nist",
+      "name": "NIST",
+      "domain": "www.nist.gov",
+      "url": "https://www.nist.gov/",
+      "topics": [
+        "science",
+        "ai",
+        "software"
+      ],
+      "kind": "official",
+      "guidance": "Estándares, medición y documentación técnica."
+    },
+    {
+      "id": "dlmf",
+      "name": "NIST DLMF",
+      "domain": "dlmf.nist.gov",
+      "url": "https://dlmf.nist.gov/",
+      "topics": [
+        "math"
+      ],
+      "kind": "official",
+      "guidance": "Definiciones, funciones y referencias matemáticas."
+    },
+    {
+      "id": "ams",
+      "name": "AMS",
+      "domain": "www.ams.org",
+      "url": "https://www.ams.org/",
+      "topics": [
+        "math"
+      ],
+      "kind": "paper",
+      "guidance": "Publicaciones y referencias de matemáticas."
+    },
+    {
+      "id": "ros",
+      "name": "ROS",
+      "domain": "docs.ros.org",
+      "url": "https://docs.ros.org/",
+      "topics": [
+        "robotics",
+        "software"
+      ],
+      "kind": "official",
+      "guidance": "Documentación con distribución y versión."
+    },
+    {
+      "id": "mdn",
+      "name": "MDN",
+      "domain": "developer.mozilla.org",
+      "url": "https://developer.mozilla.org/",
+      "topics": [
+        "software"
+      ],
+      "kind": "official",
+      "guidance": "Documentación de la plataforma web; contrastar especificación."
+    },
+    {
+      "id": "w3c",
+      "name": "W3C",
+      "domain": "www.w3.org",
+      "url": "https://www.w3.org/",
+      "topics": [
+        "software"
+      ],
+      "kind": "official",
+      "guidance": "Especificaciones y accesibilidad."
+    },
+    {
+      "id": "acm",
+      "name": "ACM Digital Library",
+      "domain": "dl.acm.org",
+      "url": "https://dl.acm.org/",
+      "topics": [
+        "software",
+        "ai"
+      ],
+      "kind": "paper",
+      "guidance": "Investigación y actas, con acceso variable."
+    },
+    {
+      "id": "ieee",
+      "name": "IEEE Xplore",
+      "domain": "ieeexplore.ieee.org",
+      "url": "https://ieeexplore.ieee.org/",
+      "topics": [
+        "robotics",
+        "software"
+      ],
+      "kind": "paper",
+      "guidance": "Publicaciones de ingeniería, con acceso variable."
+    },
+    {
+      "id": "reuters",
+      "name": "Reuters",
+      "domain": "www.reuters.com",
+      "url": "https://www.reuters.com/",
+      "topics": [
+        "news"
+      ],
+      "kind": "news",
+      "guidance": "Cobertura periodística. Corroborar con documento o declaración original."
+    },
+    {
+      "id": "ap",
+      "name": "AP News",
+      "domain": "apnews.com",
+      "url": "https://apnews.com/",
+      "topics": [
+        "news"
+      ],
+      "kind": "news",
+      "guidance": "Cobertura periodística. Diferenciar noticia y comunicado."
+    },
+    {
+      "id": "bbc",
+      "name": "BBC",
+      "domain": "www.bbc.com",
+      "url": "https://www.bbc.com/",
+      "topics": [
+        "news"
+      ],
+      "kind": "news",
+      "guidance": "Contexto periodístico, no fuente primaria para cifras técnicas."
+    },
+    {
+      "id": "reveal",
+      "name": "Reveal.js",
+      "domain": "revealjs.com",
+      "url": "https://revealjs.com/",
+      "topics": [
+        "software"
+      ],
+      "kind": "official",
+      "guidance": "Documentación del motor."
+    },
+    {
+      "id": "echarts",
+      "name": "Apache ECharts",
+      "domain": "echarts.apache.org",
+      "url": "https://echarts.apache.org/",
+      "topics": [
+        "software"
+      ],
+      "kind": "official",
+      "guidance": "Documentación de gráficas."
+    },
+    {
+      "id": "three",
+      "name": "Three.js",
+      "domain": "threejs.org",
+      "url": "https://threejs.org/",
+      "topics": [
+        "software",
+        "robotics"
+      ],
+      "kind": "official",
+      "guidance": "Documentación 3D."
+    },
+    {
+      "id": "mermaid",
+      "name": "Mermaid",
+      "domain": "mermaid.js.org",
+      "url": "https://mermaid.js.org/",
+      "topics": [
+        "software"
+      ],
+      "kind": "official",
+      "guidance": "Documentación de diagramas."
+    }
+  ]
+}

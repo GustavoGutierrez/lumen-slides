@@ -1,0 +1,8 @@
+{
+  "id": "scene",
+  "name": "Scene",
+  "required": [
+    "scene",
+    "body"
+  ]
+}

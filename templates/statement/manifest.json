@@ -1,0 +1,7 @@
+{
+  "id": "statement",
+  "name": "Statement",
+  "required": [
+    "body"
+  ]
+}

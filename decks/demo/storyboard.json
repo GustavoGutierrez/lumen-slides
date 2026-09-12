@@ -1,0 +1,98 @@
+{
+  "title": "Presentaciones con evidencia",
+  "narrative": "Arquitectura, investigación, demostraciones visuales y distribución.",
+  "slides": [
+    {
+      "id": "cover",
+      "title": "Presentaciones\ncon evidencia",
+      "layout": "cover",
+      "purpose": "Demo funcional de Lumen Slides. Usa las flechas o desliza para avanzar. Puedes cambiar el tema y la tipografía en la barra superior.",
+      "sourceIds": [],
+      "basis": "analysis"
+    },
+    {
+      "id": "separation",
+      "title": "Contenido e identidad visual independientes",
+      "layout": "columns",
+      "purpose": "Esta es una decisión de arquitectura del proyecto. El JSON no contiene JavaScript ejecutable.",
+      "sourceIds": [],
+      "basis": "analysis"
+    },
+    {
+      "id": "flow",
+      "title": "Un recorrido que permite volver a las fuentes",
+      "layout": "diagram",
+      "purpose": "Haz clic en un nodo o usa las flechas del panel. El bucle muestra la corrección de afirmaciones; no equivale a una prueba automática de veracidad.",
+      "sourceIds": [],
+      "basis": "analysis"
+    },
+    {
+      "id": "chart",
+      "title": "Una gráfica conserva los datos que la explican",
+      "layout": "chart",
+      "purpose": "Pasa el puntero por la gráfica, selecciona una serie en la leyenda o abre Ver datos. Las cantidades son únicamente una demostración.",
+      "sourceIds": [],
+      "basis": "demo"
+    },
+    {
+      "id": "render",
+      "title": "SVG para ampliar y exportar con nitidez",
+      "layout": "statement",
+      "purpose": "Apache ECharts describe las diferencias de uso y memoria entre Canvas y SVG. Esta selección es una decisión para este tipo de presentación, no una superioridad universal.",
+      "sourceIds": [
+        "echarts"
+      ],
+      "basis": "evidence"
+    },
+    {
+      "id": "network",
+      "title": "3D cuando la forma ayuda a explicar",
+      "layout": "scene",
+      "purpose": "Arrastra la red para girarla. Three.js utiliza WebGL2. Si no está disponible, aparece una descripción. El PDF conserva una vista fija.",
+      "sourceIds": [],
+      "basis": "demo"
+    },
+    {
+      "id": "math",
+      "title": "La notación también forma parte del contenido",
+      "layout": "math",
+      "purpose": "Demostración de notación editable. No representa un hallazgo estadístico.",
+      "sourceIds": [],
+      "basis": "demo"
+    },
+    {
+      "id": "delivery",
+      "title": "Dos formatos para distintos usos",
+      "layout": "columns",
+      "purpose": "Las exportaciones estáticas no conservan interactividad. En un teléfono, algunos visores de archivos bloquean JavaScript: abre el HTML con un navegador o usa alojamiento estático.",
+      "sourceIds": [
+        "reveal",
+        "slidev"
+      ],
+      "basis": "analysis"
+    },
+    {
+      "id": "use",
+      "title": "Un proyecto por tema, una metodología común",
+      "layout": "statement",
+      "purpose": "Los adaptadores requieren el CLI instalado, autenticado y con sus herramientas de investigación configuradas. El renderizador y la demo funcionan sin un modelo.",
+      "sourceIds": [],
+      "basis": "analysis"
+    },
+    {
+      "id": "sources",
+      "title": "Fuentes técnicas",
+      "layout": "references",
+      "purpose": "Fuentes primarias utilizadas para investigar el motor. Las cifras de la gráfica son ilustrativas y no provienen de estos documentos.",
+      "sourceIds": [
+        "reveal",
+        "echarts",
+        "mermaid",
+        "three",
+        "slidev",
+        "playwright"
+      ],
+      "basis": "evidence"
+    }
+  ]
+}

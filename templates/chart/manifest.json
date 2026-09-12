@@ -1,0 +1,7 @@
+{
+  "id": "chart",
+  "name": "Chart",
+  "required": [
+    "chart"
+  ]
+}
