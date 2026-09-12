@@ -12,7 +12,11 @@ try{
   await page.context().setOffline(true);
   assert.equal(await page.evaluate(()=>window.__LUMEN__.deck.slides.length),10);
   await page.keyboard.press('ArrowRight');assert.equal(await page.evaluate(()=>window.__LUMEN__.reveal.getIndices().h),1);
+  const inkBackground=await page.evaluate(()=>getComputedStyle(document.body).backgroundColor);
   await page.selectOption('#theme-picker','paper');await page.waitForFunction(()=>document.documentElement.dataset.theme==='paper');
+  // The attribute alone proves nothing: assert the palette actually repaints.
+  const paperBackground=await page.evaluate(()=>getComputedStyle(document.body).backgroundColor);
+  assert.notEqual(paperBackground,inkBackground,`theme switch did not repaint: still ${paperBackground}`);
   await page.selectOption('#font-picker','plex');await page.waitForFunction(()=>window.__LUMEN__.font.family==='IBM Plex Sans');
   await page.selectOption('#theme-picker','ink');await page.selectOption('#font-picker','inter');
   await page.evaluate(()=>window.__LUMEN__.settled());
