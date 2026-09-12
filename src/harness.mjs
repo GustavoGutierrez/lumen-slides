@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { performance } from 'node:perf_hooks';
 import spawn from 'cross-spawn';
-import { ROOT, json, stable, hash, checkSchema, validateDeck, writeJSON } from './core.mjs';
+import { ROOT, json, stable, hash, checkSchema, validateDeck, writeJSON, iconSets } from './core.mjs';
 import { researchPlan } from './research.mjs';
 import { buildDeck } from './build.mjs';
 import { verifyDeck, exportPDF, packDeck } from './export.mjs';
@@ -94,6 +94,28 @@ async function assertStage(stage,artifact,dir) {
     for(const slide of deck.slides.filter(s=>s.basis==='evidence'))if(!artifact.checkedClaims.some(c=>c.slideId===slide.id&&['supported','limited'].includes(c.result)))throw new Error(`Review did not check factual slide ${slide.id}`);
   }
 }
+// A template that re-declares --background paints its own colour field: the slide arrives on a colour of
+// its own rather than the theme page. That is a fact of the shipped CSS, so it is read from the CSS —
+// a hand-kept list of which templates do it would drift from the directory like any other copy.
+const PAINTS_FIELD=/--background\s*:\s*#[0-9a-f]{3,8}/i;
+export async function layoutManifests() {
+  const ids=(await fs.readdir(path.join(ROOT,'templates'),{withFileTypes:true})).filter(e=>e.isDirectory()).map(e=>e.name).sort();
+  const layouts=[];
+  for(const id of ids){
+    const manifest=await json(path.join(ROOT,'templates',id,'manifest.json'));
+    const css=await fs.readFile(path.join(ROOT,'templates',id,'style.css'),'utf8').catch(()=>'');
+    layouts.push({...manifest,field:PAINTS_FIELD.test(css)});
+  }
+  return layouts;
+}
+// Thousands of icons cannot travel in a prompt that is serialised whole on every stage, so the agent gets
+// the search command and the size of what it reaches, and asks for the names it actually needs.
+export async function iconGuide() {
+  let available=0;
+  for(const dir of Object.values(iconSets))available+=(await fs.readdir(path.join(ROOT,dir))).filter(f=>f.endsWith('.svg')).length;
+  return {available,reference:Object.keys(iconSets).map(p=>`${p}:<name>`).join(', '),
+    search:'node scripts/icons.mjs search <terms>',verify:'node scripts/icons.mjs has <ref...>',browse:'node scripts/icons.mjs categories'};
+}
 export async function promptFor(stage,dir) {
   if(!stages.includes(stage))throw new Error(`Unknown stage ${stage}`);
   const plan=await researchPlan(dir);
@@ -102,9 +124,15 @@ export async function promptFor(stage,dir) {
   if(stage==='research'){context.researchPlan=plan;context.schema=await json(path.join(ROOT,'schemas/research.schema.json'));}
   if(stage!=='research')context.research=await json(path.join(dir,'research.json'));
   if(['compose','review'].includes(stage))context.storyboard=await json(path.join(dir,'storyboard.json'));
+  // Storyboard is the stage that picks a layout for every slide, so it needs the manifests as much as
+  // compose does; without them it was choosing from whatever list its role file happened to still name.
+  if(['storyboard','compose'].includes(stage)){context.layouts=await layoutManifests();context.icons=await iconGuide();}
   if(stage==='compose'){
     context.schema=await json(path.join(ROOT,'schemas/deck.schema.json'));
-    context.layouts=[];for(const p of (await fs.readdir(path.join(ROOT,'templates'))).sort())context.layouts.push(await json(path.join(ROOT,'templates',p,'manifest.json')));
+    // Only the identity of each theme and font: compose picks one by id, and the palettes and font files
+    // behind them are the build's business.
+    context.themes=[];for(const f of (await fs.readdir(path.join(ROOT,'themes'))).filter(f=>f.endsWith('.json')).sort()){const t=await json(path.join(ROOT,'themes',f));context.themes.push({id:t.id,name:t.name});}
+    context.fonts=Object.entries(await json(path.join(ROOT,'config/fonts.json'))).map(([id,f])=>({id,name:f.name}));
     context.example=await json(path.join(ROOT,'decks/demo/deck.json'));
   }
   if(stage==='review')context.deck=await validateDeck(dir);

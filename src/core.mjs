@@ -31,7 +31,7 @@ export async function assetData(base, relative, font = false) {
   return `data:${mime};base64,${bytes.toString('base64')}`;
 }
 const active = markup => /<script|<foreignObject|\bon\w+\s*=|(?:href|src)\s*=\s*["'](?!#)|url\s*\(/i.test(markup);
-const iconSets = { 'tabler':'node_modules/@tabler/icons/icons/outline', 'tabler-filled':'node_modules/@tabler/icons/icons/filled', 'brand':'node_modules/simple-icons/icons' };
+export const iconSets = { 'tabler':'node_modules/@tabler/icons/icons/outline', 'tabler-filled':'node_modules/@tabler/icons/icons/filled', 'brand':'node_modules/simple-icons/icons' };
 // Icons are spliced inline, not inlined as an <img>: an SVG document inside <img> cannot read the page
 // custom properties, so currentColor would never follow the theme. The reference is agent-authored input.
 export async function iconSVG(reference) {

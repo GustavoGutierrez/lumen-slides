@@ -25,6 +25,7 @@
     "setup:browsers": "playwright install chromium firefox webkit",
     "verify": "node bin/lumen.mjs verify decks/demo",
     "wcag": "node scripts/wcag.mjs",
+    "icons": "node scripts/icons.mjs",
     "agent:sync": "node scripts/sync-agents.mjs",
     "package": "node scripts/package-project.mjs"
   },
