@@ -1,5 +1,9 @@
 # Lumen Slides
 
+<p align="center">
+  <img src="assets/brand/lumen-slides.png" alt="Lumen Slides" width="240">
+</p>
+
 Harness de agentes para investigar, componer y distribuir presentaciones web profesionales. El contenido vive en JSON. El cliente determinista aplica plantillas, colores, tipografías y marcas, y genera un HTML autónomo con una copia PDF opcional.
 
 Incluye una demo de 10 diapositivas, 9 layouts, 3 temas, 2 familias tipográficas, 2 marcas de ejemplo, gráficas ECharts, Mermaid interactivo, escenas Three.js y fórmulas KaTeX. La investigación técnica y la justificación del stack están en [docs/RESEARCH.md](docs/RESEARCH.md).
@@ -134,6 +138,6 @@ Las pruebas unitarias comprueban citas, contratos de datos, escape de contenido,
 
 Aplicación local operativa de autoría asistida y distribución. No incluye editor visual de arrastrar y soltar, SaaS, colaboración, buscador propio ni PPTX editable. La navegación web la aporta el agente. Three.js tiene una descripción alternativa cuando WebGL2 no está disponible. La exportación PDF es estática y no reproduce animaciones.
 
-Para reconstruir el paquete del proyecto y su demo, usa `npm run pdf` seguido de `npm run package`. El archivo `source.bundle`, cuando está incluido, conserva el historial inicial y permite obtener otro checkout con `git clone source.bundle lumen-source`.
+Para reconstruir el paquete del proyecto y su demo, usa `npm run pdf` seguido de `npm run package`.
 
 Código original bajo MIT. Dependencias y fuentes conservan sus propias licencias.
